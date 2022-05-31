@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import com.iiitlucknow.android.festify.Adapters.clickAdapter
+import com.iiitlucknow.android.festify.Adapters.EventsInfoRecyclerViewAdapter
 import com.iiitlucknow.android.festify.data_classes.recyclerItemClick
-import com.iiitlucknow.android.festify.databinding.FragmentClickBinding
+import com.iiitlucknow.android.festify.databinding.FragmentEventsinfoBinding
 
-class ClickFragment : Fragment() {
-    private var _binding: FragmentClickBinding? = null
+class EventsInfoFragment : Fragment() {
+    private var _binding: FragmentEventsinfoBinding? = null
     private val binding get() = _binding!!
-    val args: ClickFragmentArgs by navArgs()
-    lateinit var adapter: clickAdapter
+    val args: EventsInfoFragmentArgs by navArgs()
+    lateinit var adapter: EventsInfoRecyclerViewAdapter
     private var m_android: MutableList<recyclerItemClick> = mutableListOf(
         recyclerItemClick(R.drawable.android_img, R.string.android, R.string.date),
         recyclerItemClick(R.drawable.android_img, R.string.android, R.string.date),
@@ -56,19 +56,19 @@ class ClickFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentClickBinding.inflate(
+        _binding = FragmentEventsinfoBinding.inflate(
             inflater, container, false
         )
         if (args.event == resources.getString(R.string.android)) {
-            adapter = clickAdapter(m_android)
+            adapter = EventsInfoRecyclerViewAdapter(m_android)
         } else if (args.event == resources.getString(R.string.web)) {
-            adapter = clickAdapter(m_web)
+            adapter = EventsInfoRecyclerViewAdapter(m_web)
         } else if (args.event == resources.getString(R.string.design)) {
-            adapter = clickAdapter(m_design)
+            adapter = EventsInfoRecyclerViewAdapter(m_design)
         } else if (args.event == resources.getString(R.string.ai)) {
-            adapter = clickAdapter(m_ai)
+            adapter = EventsInfoRecyclerViewAdapter(m_ai)
         } else if (args.event == resources.getString(R.string.cyber_sec)) {
-            adapter = clickAdapter(m_cyber)
+            adapter = EventsInfoRecyclerViewAdapter(m_cyber)
         }
         binding.clickRecycler.adapter = adapter
         binding.clickRecycler.setHasFixedSize(true)

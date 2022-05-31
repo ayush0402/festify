@@ -27,9 +27,9 @@
         tools:layout="@layout/fragment_addevents" />
     <fragment
         android:id="@+id/clickFragment"
-        android:name="com.iiitlucknow.android.festify.ClickFragment"
+        android:name="com.iiitlucknow.android.festify.EventsInfoFragment"
         android:label="fragment_click"
-        tools:layout="@layout/fragment_click">
+        tools:layout="@layout/fragment_eventsinfo">
         <argument
             android:name="event"
             app:argType="string" />

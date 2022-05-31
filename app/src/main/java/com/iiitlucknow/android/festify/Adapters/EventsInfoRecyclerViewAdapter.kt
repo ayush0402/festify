@@ -14,8 +14,8 @@ import com.iiitlucknow.android.festify.R
 import com.iiitlucknow.android.festify.data.my_events
 import com.iiitlucknow.android.festify.data_classes.recyclerItemClick
 
-class clickAdapter(private var list: MutableList<recyclerItemClick>) :
-    RecyclerView.Adapter<clickAdapter.ViewHolder>() {
+class EventsInfoRecyclerViewAdapter(private var list: MutableList<recyclerItemClick>) :
+    RecyclerView.Adapter<EventsInfoRecyclerViewAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val recycler_clicker_text: TextView = view.findViewById(R.id.recycler_clicker_text)
         val recycler_clicker_img: ImageView = view.findViewById(R.id.my_img)
