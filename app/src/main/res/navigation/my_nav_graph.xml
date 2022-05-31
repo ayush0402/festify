@@ -15,10 +15,10 @@
 
     </fragment>
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.iiitlucknow.android.festify.home.HomeFragment"
+        android:id="@+id/regEventsFragment"
+        android:name="com.iiitlucknow.android.festify.home.RegEventsFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_regevents">
 
     </fragment>
     <fragment
@@ -35,5 +35,4 @@
             android:name="event"
             app:argType="string" />
     </fragment>
-
 </navigation>

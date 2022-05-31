@@ -6,25 +6,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.iiitlucknow.android.festify.Adapters.homeAdapter
-import com.iiitlucknow.android.festify.databinding.FragmentHomeBinding
+import com.iiitlucknow.android.festify.Adapters.RegEventsRecyclerViewAdapter
+import com.iiitlucknow.android.festify.databinding.FragmentRegeventsBinding
 import dagger.hilt.android.scopes.FragmentScoped
 
 @FragmentScoped
-class HomeFragment : Fragment() {
-    private val homeViewModel: HomeViewModel by viewModels()
+class RegEventsFragment : Fragment() {
+    private val regEventsViewModel: RegEventsViewModel by viewModels()
 
-    lateinit var binding: FragmentHomeBinding
+    lateinit var binding: FragmentRegeventsBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
-        homeViewModel.allwords.observe(
+        binding = FragmentRegeventsBinding.inflate(inflater, container, false)
+        regEventsViewModel.allwords.observe(
             viewLifecycleOwner
         ) {
-            binding.homeRecycler.adapter = homeAdapter(it)
+            binding.homeRecycler.adapter = RegEventsRecyclerViewAdapter(it)
         }
 
         binding.homeRecycler.setHasFixedSize(true)

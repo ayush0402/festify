@@ -14,9 +14,9 @@ import com.iiitlucknow.android.festify.MyDialogFragment
 import com.iiitlucknow.android.festify.R
 import com.iiitlucknow.android.festify.data.my_events
 
-class homeAdapter(
+class RegEventsRecyclerViewAdapter(
     private val list: MutableList<my_events>
-) : RecyclerView.Adapter<homeAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<RegEventsRecyclerViewAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val recycler_clicker_text: TextView = view.findViewById(R.id.recycler_clicker_text)
         val recycler_clicker_img: ImageView = view.findViewById(R.id.my_img)

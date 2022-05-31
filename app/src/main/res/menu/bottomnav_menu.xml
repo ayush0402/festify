@@ -6,9 +6,9 @@
         android:icon="@drawable/ic_baseline_event_24"
         android:title="Events" />
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/regEventsFragment"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home" />
+        android:title="Reg Events" />
     <item
         android:id="@+id/addEventsFragment"
         android:icon="@drawable/ic_add"

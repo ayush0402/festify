@@ -13,7 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @ViewModelScoped
-class HomeViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
+class RegEventsViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
     private val myrepo: Repo
     val allwords: LiveData<MutableList<my_events>>
 
