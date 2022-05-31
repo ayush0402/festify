@@ -7,12 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.iiitlucknow.android.festify.EventsFragmentDirections
+import com.iiitlucknow.android.festify.HomeFragmentDirections
 import com.iiitlucknow.android.festify.R
 import com.iiitlucknow.android.festify.data_classes.recyclerItem
 
-class recyclerAdapter(private var list: MutableList<recyclerItem>) :
-    RecyclerView.Adapter<recyclerAdapter.ViewHolder>() {
+class HomeRecyclerViewAdapter(private var list: MutableList<recyclerItem>) :
+    RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val recycler_text: TextView = view.findViewById(R.id.recycler_text)
         val recycler_icon: ImageView = view.findViewById(R.id.recycler_icon)
@@ -30,7 +30,7 @@ class recyclerAdapter(private var list: MutableList<recyclerItem>) :
         holder.recycler_text.text = holder.context.resources.getString(list[position].title)
         holder.itemView.setOnClickListener {
             val action =
-                EventsFragmentDirections.actionEventsFragmentToClickFragment(
+                HomeFragmentDirections.actionEventsFragmentToClickFragment(
                     holder.recycler_text.text.toString()
                 )
             Navigation.findNavController(holder.itemView).navigate(action)

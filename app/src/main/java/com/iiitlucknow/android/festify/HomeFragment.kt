@@ -7,17 +7,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.iiitlucknow.android.festify.Adapters.recyclerAdapter
+import com.iiitlucknow.android.festify.Adapters.HomeRecyclerViewAdapter
 import com.iiitlucknow.android.festify.Adapters.sliderAdapter
 import com.iiitlucknow.android.festify.ViewModels.MainViewModel
-import com.iiitlucknow.android.festify.data_classes.add_event_data
 import com.iiitlucknow.android.festify.data_classes.recyclerItem
-import com.iiitlucknow.android.festify.databinding.FragmentEventsBinding
+import com.iiitlucknow.android.festify.databinding.FragmentHomeBinding
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 
-class EventsFragment : Fragment() {
-    private var _binding: FragmentEventsBinding? = null
+class HomeFragment : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var sliderAdapter: sliderAdapter
     lateinit var vm:MainViewModel
@@ -41,10 +40,10 @@ class EventsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentEventsBinding.inflate(
+        _binding = FragmentHomeBinding.inflate(
             inflater, container, false
         )
-        vm = ViewModelProvider.AndroidViewModelFactory(activity!!.application).create(MainViewModel::class.java)
+        vm = ViewModelProvider.AndroidViewModelFactory(requireActivity().application).create(MainViewModel::class.java)
 
         vm.myname.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(),it.message[0].toString(), Toast.LENGTH_LONG).show()
@@ -58,7 +57,7 @@ class EventsFragment : Fragment() {
             slide.setIndicatorAnimation(IndicatorAnimationType.WORM)
             slide.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
             slide.startAutoCycle()
-            recycler.adapter = recyclerAdapter(fields)
+            recycler.adapter = HomeRecyclerViewAdapter(fields)
             recycler.setHasFixedSize(true)
         }
         return (binding.root)
